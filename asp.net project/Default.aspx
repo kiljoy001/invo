@@ -1,12 +1,26 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="asp.net_project._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
+    <script>
+        $(function () {
+            $('.jcarousel').jcarousel();
+        });
+    </script>
+        <div class="jcarousel-wrapper">
+            <div class="jcarousel" data-jcarousel="true" style="display: inline-block;" >
+                <ul style="position: relative; list-style: none;">
+                    <li>
+                        <img src="Images/bags-1633717_1920.jpg" width="600" height="400" alt=""/>
+                    </li>
+                    <li>
+                        <img src="Images/workshop-1493804_1920.jpg" width="600" height="400" alt=""/>
+                    </li>
+                    <li>
+                        <img src="Images/factory-947425.jpg" width="600" height="400" alt=""/>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
     <div class="row">
         <div class="col-md-4">
@@ -38,5 +52,4 @@
             </p>
         </div>
     </div>
-
 </asp:Content>

@@ -12,6 +12,11 @@ namespace asp.net_project
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkID=303951
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/jquery-jcarousel").Include(
+                "~/Scripts/jquery-1.10.2.js",
+                "~/Scripts/jcarousel.js",
+                "~/Scripts/control-carousel.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/WebFormsJs").Include(
                             "~/Scripts/WebForms/WebForms.js",
                             "~/Scripts/WebForms/WebUIValidation.js",
