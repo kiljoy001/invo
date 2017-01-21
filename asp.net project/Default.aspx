@@ -1,25 +1,27 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="asp.net_project._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <script>
+    <%--<script>
         $(function () {
             $('.jcarousel').jcarousel();
         });
-    </script>
+    </script>--%>
         <div class="jcarousel-wrapper">
             <div class="jcarousel" data-jcarousel="true" style="display: inline-block;" >
                 <ul style="position: relative; list-style: none;">
                     <li>
-                        <img src="Images/bags-1633717_1920.jpg" width="600" height="400" alt=""/>
+                        <img src="Images/bags-1633717_1920.jpg" width="700" height="400" alt=""/>
                     </li>
                     <li>
-                        <img src="Images/workshop-1493804_1920.jpg" width="600" height="400" alt=""/>
+                        <img src="Images/workshop-1493804_1920.jpg" width="700" height="400" alt=""/>
                     </li>
                     <li>
-                        <img src="Images/factory-947425.jpg" width="600" height="400" alt=""/>
+                        <img src="Images/factory-947425.jpg" width="700" height="400" alt=""/>
                     </li>
                 </ul>
             </div>
+            <a href="#" class="jcarousel-control-prev" data-jcarouselcontrol="true">‹</a>
+            <a href="#" class="jcarousel-control-next" data-jcarouselcontrol="true">›</a>
         </div>
 
     <div class="row">
