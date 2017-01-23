@@ -1,14 +1,8 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="asp.net_project._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <%--<script>
-        $(function () {
-            $('.jcarousel').jcarousel();
-        });
-    </script>--%>
-        <div class="jcarousel-wrapper">
-            <div class="jcarousel" data-jcarousel="true" style="display: inline-block;" >
-                <ul style="position: relative; list-style: none;">
+        <div>
+                <ul>
                     <li>
                         <img src="Images/bags-1633717_1920.jpg" width="700" height="400" alt=""/>
                     </li>
@@ -19,9 +13,6 @@
                         <img src="Images/factory-947425.jpg" width="700" height="400" alt=""/>
                     </li>
                 </ul>
-            </div>
-            <a href="#" class="jcarousel-control-prev" data-jcarouselcontrol="true">‹</a>
-            <a href="#" class="jcarousel-control-next" data-jcarouselcontrol="true">›</a>
         </div>
 
     <div class="row">
