@@ -243,6 +243,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Images\archive-1850170_1920.jpg" />
     <Content Include="Images\bags-1633717_1920.jpg" />
     <Content Include="Images\factory-947425.jpg" />
     <Content Include="Images\workshop-1493804_1920.jpg" />
