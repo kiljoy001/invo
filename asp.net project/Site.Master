@@ -13,7 +13,7 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <script src="Scripts/jcarousel.js"></script>
+    <script src="Scripts/flickity.js"></script>
     <script type = 'text/javascript' >
         var appInsights=window.appInsights||function(config)
         {

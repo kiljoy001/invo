@@ -12,7 +12,7 @@ namespace asp.net_project
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkID=303951
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new scriptbundle("~/bundles/flickity").Include(
+            bundles.Add(new ScriptBundle("~/bundles/flickity").Include(
                 "~/Scripts/flickity.js"));
             bundles.Add(new ScriptBundle("~/bundles/WebFormsJs").Include(
                             "~/Scripts/WebForms/WebForms.js",
