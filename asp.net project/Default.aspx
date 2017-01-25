@@ -16,25 +16,18 @@
             <img src="http://placehold.it/1400x400">
         </div>
     </div>
-
+    <div class="container body-content">
     <div class="row">
         <div class="col-md-4">
-            <h2>&nbsp;Getting started</h2>
+            <h2>Need to track things?</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
+                Invo is a easy to use inventory system that allows you to easily track your stock at an affordable cost without the need for an on the premise server or dedicated equipment to track your inventory.
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
+            <h2>Cloud Hosted</h2>
             <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                All parts of the Invo system are hosted on Microsoft Azure - that means reliable uptime, service wide redundancy and responsiveness.
             </p>
         </div>
         <div class="col-md-4">
@@ -42,9 +35,7 @@
             <p>
                 You can easily find a web hosting company that offers the right mix of features and price for your applications.
             </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
         </div>
     </div>
+        </div>
 </asp:Content>
