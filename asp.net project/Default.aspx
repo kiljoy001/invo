@@ -1,19 +1,19 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="asp.net_project._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <link rel="stylesheet" type="text/css" href="~/Content/test.css">
+    <link rel="stylesheet" type="text/css" href="/Content/flickity.css">
     <div class="main-gallery js-flickity" data-flickity-options='{"cellAlign":"left","contain":"true", "pageDots":"false", "imagesLoaded":"true", "wrapAround":"true", "percentPosition": "false"}'>
         <div class="gallery-cell">
-            <img src="Images/bags-1633717_1920.jpg" width="700" height="400" alt="" />
+            <img src="http://placehold.it/1400x400">
             </div>
             <div class="gallery-cell">
-                <img src="Images/workshop-1493804_1920.jpg" width="700" height="400" alt="" />
+                <img src="http://placehold.it/1400x400">
             </div>
             <div class="gallery-cell">
-                <img src="Images/factory-947425.jpg" width="700" height="400" alt="" />
+                <img src="http://placehold.it/1400x400">
             </div>
         <div class="gallery-cell">
-            <img src="Images/archive-1850170_1920.jpg" width="700" height="400" alt="" />
+            <img src="http://placehold.it/1400x400">
         </div>
     </div>
 
