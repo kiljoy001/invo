@@ -17,6 +17,7 @@
         </div>
     </div>
     <div class="container body-content">
+        <br />
     <div class="row">
         <div class="col-md-4">
             <h2>Need to track things?</h2>
@@ -31,9 +32,9 @@
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
+            <h2>Easy Intergration, Easy Sales Based Tracking </h2>
             <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+                Our application is intergrated with Square and Clover point of sale systems via their API. Not using either? Contact our sales team to see if we can offer a custom solution, just for you!
             </p>
         </div>
     </div>
