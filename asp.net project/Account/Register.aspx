@@ -16,11 +16,12 @@
                 <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The email field is required." />
-                <asp:Label runat="server" AssociatedControlID="fName" CssClass="col-md-2 control-label">First Name</asp:Label>
-            <div class="col-md-10">
-                <asp:TextBox runat="server" ID="fName" CssClass="form-control" />
+
+                <div class="col-md-10">
+                    <asp:Label runat="server" AssociatedControlID="fName" CssClass="col-md-2 control-label">First Name</asp:Label>
+                    <asp:TextBox runat="server" ID="fName" CssClass="form-control" />
+                </div>
             </div>
-        </div>
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
@@ -28,7 +29,7 @@
                 <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
                     CssClass="text-danger" ErrorMessage="The password field is required." />
-                </div>
+            </div>
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
@@ -40,7 +41,7 @@
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
             </div>
         </div>
-        
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
