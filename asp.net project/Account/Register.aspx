@@ -16,7 +16,7 @@
                 <asp:TextBox runat="server" ID="fName" CssClass="form-control" TextMode="SingleLine" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="fName"
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="Your first name is required." />
-                <asp:RegularExpressionValidator ID="fNameValidate" runat="server" ControlToValidate="fName" Display="Dynamic" ValidationExpression="^[a-zA-Z''-'\s]{1,100}$" ErrorMessage="Please enter your first name."/>
+                <asp:RegularExpressionValidator ID="fNameValidate" runat="server" ControlToValidate="fName" Display="Dynamic" ValidationExpression="^[a-zA-Z''-'\s]{1,100}$" ErrorMessage="Please enter your first name." CssClass="text-danger"/>
             </div>
         </div>
         <div class="form-group">
@@ -25,14 +25,14 @@
                 <asp:TextBox runat="server" ID="lName" CssClass="form-control" TextMode="SingleLine" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="lName"
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="Your last name is required." />
-                <asp:RegularExpressionValidator ID="lNameValidate" runat="server" ControlToValidate="lName" Display="Dynamic" ValidationExpression="^[a-zA-Z''-'\s]{1,100}$" ErrorMessage="Please enter your last name."/>
+                <asp:RegularExpressionValidator ID="lNameValidate" runat="server" ControlToValidate="lName" Display="Dynamic" ValidationExpression="^[a-zA-Z''-'\s]{1,100}$" ErrorMessage="Please enter your last name." CssClass="text-danger"/>
             </div>
         </div>
            <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Phone" CssClass="col-md-2 control-label">Phone Number</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Phone" CssClass="form-control" TextMode="SingleLine" />
-                <asp:RegularExpressionValidator ID="phoneValidate" runat="server" ErrorMessage="Please input a US phone number." ControlToValidate="Phone" ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$" Display="Dynamic"/>
+                <asp:RegularExpressionValidator ID="phoneValidate" runat="server" ErrorMessage="Please input a US phone number." ControlToValidate="Phone" ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$" Display="Dynamic" CssClass="text-danger"/>
             </div>
         </div>
         <div class="form-group">
@@ -41,7 +41,7 @@
                 <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="Your email address is is required." />
-                <asp:RegularExpressionValidator ID="emailValidate" runat="server" ErrorMessage="Please enter a valid email address" ControlToValidate="Email" ValidationExpression="^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$" Display="Dynamic" />
+                <asp:RegularExpressionValidator ID="emailValidate" runat="server" display="Dynamic" ErrorMessage="Please enter a valid email address." ControlToValidate="Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="text-danger"/>
             </div>
         </div>
         <div class="form-group">
@@ -49,8 +49,8 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
-                    CssClass="text-danger" ErrorMessage="The password field is required." />
-                <asp:RegularExpressionValidator ID="passwordValidate" runat="server" display="Dynamic" ErrorMessage="Password must be between 8 and 10 characters, contain at least one digit and one alphabetic character, and must not contain special characters." ControlToValidate="Password" ValidationExpression="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$" />
+                    CssClass="text-danger" ErrorMessage="The password field is required." Display="Dynamic" />
+                <asp:RegularExpressionValidator ID="passwordValidate" runat="server" display="Dynamic" ErrorMessage="Password must be between 8 and 10 characters, contain at least one digit and one alphabetic character, and must not contain special characters." ControlToValidate="Password" ValidationExpression="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$" CssClass="text-danger"/>
 
             </div>
         </div>
