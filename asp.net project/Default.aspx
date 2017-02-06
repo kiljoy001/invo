@@ -22,7 +22,7 @@
         <div class="col-md-4">
             <h2>Need to track things?</h2>
             <p>
-                Invo is a easy to use inventory system that allows you to easily track your stock at an affordable cost without the need for an on the premise server or dedicated equipment to track your inventory.
+                Invo is a easy to use inventory system that allows you to easily track your stock at an affordable cost without the need for an on the premise server or dedicated equipment to track your inventory, without the messy, imprecise pencil and paper method
             </p>
         </div>
         <div class="col-md-4">
