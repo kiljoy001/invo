@@ -257,7 +257,6 @@
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <Content Include="apiapp.json" />
     <None Include="Properties\PublishProfiles\csi291 - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\csi291 - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\csi291 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

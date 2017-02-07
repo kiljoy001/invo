@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 
+
 namespace asp.net_project
 {
     public class middleTier
@@ -25,7 +26,7 @@ namespace asp.net_project
             }
                 
         }
-        public int insertUser(string password, string fName, string lName, string phone)
+        public void insertUser(string password, string fName, string lName, string phone)
         {
             using (SqlConnection dbConnect = new SqlConnection())
             {
@@ -42,16 +43,16 @@ namespace asp.net_project
                     newUser.Parameters.Add("@fname", SqlDbType.NChar, 60).Value = fName;
                     newUser.Parameters.Add("@lname", SqlDbType.NChar, 60).Value = lName;
                     newUser.Parameters.Add("@phone", SqlDbType.NChar, 11).Value = phone;
-                    int keyReturn = Convert.ToInt32(newUser.ExecuteScalar());
-                    return keyReturn;
+                    //int keyReturn = Convert.ToInt32(newUser.ExecuteScalar());
+                    //return keyReturn;
                 }
-                catch (SqlException)
+                catch (SqlException se)
                 {
-                    return -3;
+                    MessageBox show = new MessageBox(se.ToString());
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    return -5;
+                    MessageBox show = new MessageBox(ex.ToString());
                 }
                 finally
                 {
