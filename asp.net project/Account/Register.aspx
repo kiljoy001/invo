@@ -5,7 +5,6 @@
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
-
     <div class="form-horizontal">
         <h4>Create a new account</h4>
         <hr />
@@ -64,11 +63,34 @@
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
             </div>
         </div>
-
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="cName" CssClass="col-md-2 control-label">Company Name</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="cName" CssClass="form-control" TextMode="SingleLine" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="cName"
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter company name" />
+                <asp:RegularExpressionValidator ID="cName_validator" runat="server" ControlToValidate="cName" Display="Dynamic" ValidationExpression="^[a-zA-Z''-'\s]{1,100}$" ErrorMessage="Please enter your first name." CssClass="text-danger"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="title" CssClass="col-md-2 control-label">Title</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="" CssClass="form-control" TextMode="SingleLine" />
+                <asp:RegularExpressionValidator ID="cTitle" runat="server" ControlToValidate="cName" Display="Dynamic" ValidationExpression="^[a-zA-Z''-'\s]{1,100}$" ErrorMessage="Please enter your title." CssClass="text-danger"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="cName" CssClass="col-md-2 control-label">Company Name</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" TextMode="SingleLine" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="cName"
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter company name" />
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="cName" Display="Dynamic" ValidationExpression="^[a-zA-Z''-'\s]{1,100}$" ErrorMessage="Please enter your first name." CssClass="text-danger"/>
+            </div>
+            </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
-    </div>
 </asp:Content>
