@@ -26,14 +26,13 @@ namespace asp.net_project
             }
                 
         }
-        public int insertUser(string password, string fName, string lName, string phone, string login)
+        public int insertUser(string password, string fName, string lName, string phone, string login, string cname, string ctitle, string caddr, string czip, string cstate)
         {
             using (SqlConnection dbConnect = new SqlConnection())
             {
                 SqlCommand newUser = new SqlCommand();
                 try
                 {
-                    dbConnect.ConnectionString = "Server = tcp:webappdb-csi291.database.windows.net,1433;Initial Catalog = model_db; Persist Security Info=False;User ID =webappdb_csi291; Password=GKLq4AqS9NadbUJ9qCbHemkc; MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;";
                     dbConnect.Open();
                     newUser.Connection = dbConnect;
                     newUser.CommandType = CommandType.StoredProcedure;
@@ -44,6 +43,11 @@ namespace asp.net_project
                     newUser.Parameters.Add("@fname", SqlDbType.NChar, 60).Value = fName;
                     newUser.Parameters.Add("@lname", SqlDbType.NChar, 60).Value = lName;
                     newUser.Parameters.Add("@phone", SqlDbType.NChar, 11).Value = phone;
+                    newUser.Parameters.Add("@cname", SqlDbType.NChar, 255).Value = cname;
+                    newUser.Parameters.Add("@ctitle", SqlDbType.NChar, 60).Value = ctitle;
+                    newUser.Parameters.Add("@caddr", SqlDbType.NChar, 255).Value = caddr;
+                    newUser.Parameters.Add("@czip", SqlDbType.NChar, 6).Value = czip;
+                    newUser.Parameters.Add("@cstate", SqlDbType.NChar, 2).Value = cstate;
                     int keyReturn = Convert.ToInt32(newUser.ExecuteScalar());
                     return keyReturn;
                 }

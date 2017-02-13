@@ -21,7 +21,7 @@ namespace asp.net_project.Account
             string hashedPassword = createUser.generateHash(Password.Text);
             try
             {
-                insert = createUser.insertUser(hashedPassword, fName.Text, lName.Text, Phone.Text, Email.Text);
+                //insert = createUser.insertUser(hashedPassword, fName.Text, lName.Text, Phone.Text, Email.Text);
             }
             catch
             {
