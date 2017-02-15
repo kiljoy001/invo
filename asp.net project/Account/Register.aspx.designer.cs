@@ -175,24 +175,6 @@ namespace asp.net_project.Account {
         protected global::System.Web.UI.WebControls.TextBox cAddress_opt;
         
         /// <summary>
-        /// cAddress_validator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator cAddress_validator1;
-        
-        /// <summary>
-        /// cAddress_validator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator cAddress_validator2;
-        
-        /// <summary>
         /// cStateList control.
         /// </summary>
         /// <remarks>

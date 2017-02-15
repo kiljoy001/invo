@@ -8,7 +8,7 @@ using Owin;
 using asp.net_project.Models;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Collections.Generic;
 
 namespace asp.net_project.Account
 {
@@ -21,7 +21,10 @@ namespace asp.net_project.Account
             string hashedPassword = createUser.generateHash(Password.Text);
             try
             {
-                //insert = createUser.insertUser(hashedPassword, fName.Text, lName.Text, Phone.Text, Email.Text);
+                string concat_text;
+                if (!String.IsNullOrEmpty(cAddress_opt.Text)) {concat_text = $"{cAddress.Text} {cAddress_opt.Text}"; insert = createUser.insertUser(hashedPassword, fName.Text, lName.Text, Phone.Text, Email.Text, cName.Text, cTitle.Text, concat_text, cZip.Text, cStateList.SelectedValue); }
+                else { insert = createUser.insertUser(hashedPassword, fName.Text, lName.Text, Phone.Text, Email.Text, cName.Text, cTitle.Text, cAddress.Text, cZip.Text, cStateList.SelectedValue); }
+                
             }
             catch
             {
@@ -35,6 +38,7 @@ namespace asp.net_project.Account
                 }
 
             }
+            Response.Redirect("Login.aspx");
         }
 
         protected void cStateList_SelectedIndexChanged(object sender, EventArgs e)
