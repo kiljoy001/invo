@@ -34,6 +34,7 @@ namespace asp.net_project.Account
                 {
                     HttpCookie welcome = new HttpCookie("welcome");
                     welcome["user"] = Email.Text;
+                    welcome["name"] = login.getName(Email.Text);
                 }
                 Response.Redirect("Member.aspx");
             }
