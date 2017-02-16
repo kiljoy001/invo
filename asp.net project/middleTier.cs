@@ -104,6 +104,37 @@ namespace asp.net_project
             }
             return hash;
         }
+        public string getName(string email)
+        {
+            string name = null;
+            using (SqlConnection dbConnect = new SqlConnection())
+            {
+                SqlCommand getPwd = new SqlCommand("SELECT user_password from site_login where user_login like @login");
+                try
+                {
+                    dbConnect.ConnectionString = "Server = tcp:webappdb-csi291.database.windows.net,1433;Initial Catalog = model_db; Persist Security Info=False;User ID =webappdb_csi291; Password=GKLq4AqS9NadbUJ9qCbHemkc; MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;";
+                    dbConnect.Open();
+                    getPwd.Connection = dbConnect;
+                    getPwd.CommandType = CommandType.Text;
+                    //getPwd.CommandText = "[dbo].[site_login]";
+                    getPwd.Parameters.AddWithValue("@login", email);
+                    SqlDataReader return_value = getPwd.ExecuteReader();
+                    if (return_value.HasRows)
+                    {
+                        while (return_value.Read()) { name = return_value.GetString(0); }
+                    }
+                }
+                catch (SqlException se)
+                {
+
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+            return name;
+        }
         
     }
 
