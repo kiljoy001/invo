@@ -61,10 +61,6 @@ namespace asp.net_project
                 {
                     return -5;
                 }
-                finally
-                {
-                    dbConnect.Close();
-                }
             }
         }
         public string generateHash(string password)
@@ -73,6 +69,42 @@ namespace asp.net_project
             string salt = BCrypt.Net.BCrypt.GenerateSalt();
             return BCrypt.Net.BCrypt.HashPassword(passString, salt);
         }
+        public bool compareHash(string enteredPassword, string dbHash)
+        {
+            return BCrypt.Net.BCrypt.Verify(enteredPassword, dbHash);
+        }
+        public string getHash(string email)
+        {
+            string hash = null;
+            using (SqlConnection dbConnect = new SqlConnection())
+            {
+                SqlCommand getPwd = new SqlCommand("SELECT user_password from site_login where user_login like @login");
+                try
+                {
+                    dbConnect.ConnectionString = "Server = tcp:webappdb-csi291.database.windows.net,1433;Initial Catalog = model_db; Persist Security Info=False;User ID =webappdb_csi291; Password=GKLq4AqS9NadbUJ9qCbHemkc; MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;";
+                    dbConnect.Open();
+                    getPwd.Connection = dbConnect;
+                    getPwd.CommandType = CommandType.Text;
+                    //getPwd.CommandText = "[dbo].[site_login]";
+                    getPwd.Parameters.AddWithValue("@login", email);
+                    SqlDataReader return_value = getPwd.ExecuteReader();
+                    if(return_value.HasRows)
+                    {
+                        while(return_value.Read()){ hash = return_value.GetString(0); }
+                    }
+                }
+                catch (SqlException se)
+                {
+
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+            return hash;
+        }
+        
     }
 
 }

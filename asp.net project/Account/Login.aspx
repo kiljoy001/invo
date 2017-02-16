@@ -22,6 +22,7 @@
                             <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
                                 CssClass="text-danger" ErrorMessage="The email field is required." />
+                            <asp:RegularExpressionValidator ID="emailValidate" runat="server" Display="Dynamic" ErrorMessage="Please enter a valid email address." ControlToValidate="Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="text-danger" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -29,6 +30,7 @@
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
+                            <asp:RegularExpressionValidator ID="passwordValidate" runat="server" Display="Dynamic" ErrorMessage="Password must be between 8 and 10 characters, contain at least one digit and one alphabetic character, and must not contain special characters." ControlToValidate="Password" ValidationExpression="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$" CssClass="text-danger" />
                         </div>
                     </div>
                     <div class="form-group">

@@ -40,6 +40,15 @@ namespace asp.net_project.Account {
         protected global::System.Web.UI.WebControls.TextBox Email;
         
         /// <summary>
+        /// emailValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator emailValidate;
+        
+        /// <summary>
         /// Password control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace asp.net_project.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Password;
+        
+        /// <summary>
+        /// passwordValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator passwordValidate;
         
         /// <summary>
         /// RememberMe control.
