@@ -26,7 +26,7 @@ namespace asp.net_project
             }
                 
         }
-        public int insertUser(string password, string fName, string lName, string phone, string login, string cname, string ctitle, string caddr, string czip, string cstate)
+        public int insertUser(string password, string fName, string lName, string phone, string login, string cname, string ctitle, string caddr, string czip, string cstate, string city)
         {
             using (SqlConnection dbConnect = new SqlConnection())
             {
@@ -39,16 +39,17 @@ namespace asp.net_project
                     newUser.CommandType = CommandType.StoredProcedure;
                     newUser.CommandText = "[dbo].[insertUser]";
                     newUser.Parameters.Clear();
-                    newUser.Parameters.Add("@login", SqlDbType.NChar, 60).Value = login;
-                    newUser.Parameters.Add("@password", SqlDbType.NChar, 60).Value = password;
-                    newUser.Parameters.Add("@fname", SqlDbType.NChar, 60).Value = fName;
-                    newUser.Parameters.Add("@lname", SqlDbType.NChar, 60).Value = lName;
-                    newUser.Parameters.Add("@phone", SqlDbType.NChar, 11).Value = phone;
-                    newUser.Parameters.Add("@cname", SqlDbType.NChar, 255).Value = cname;
-                    newUser.Parameters.Add("@ctitle", SqlDbType.NChar, 60).Value = ctitle;
-                    newUser.Parameters.Add("@caddr", SqlDbType.NChar, 255).Value = caddr;
-                    newUser.Parameters.Add("@czip", SqlDbType.NChar, 6).Value = czip;
-                    newUser.Parameters.Add("@cstate", SqlDbType.NChar, 2).Value = cstate;
+                    newUser.Parameters.Add("@login", SqlDbType.NVarChar, 60).Value = login;
+                    newUser.Parameters.Add("@password", SqlDbType.NVarChar, 60).Value = password;
+                    newUser.Parameters.Add("@fname", SqlDbType.NVarChar, 60).Value = fName;
+                    newUser.Parameters.Add("@lname", SqlDbType.NVarChar, 60).Value = lName;
+                    newUser.Parameters.Add("@phone", SqlDbType.NVarChar, 11).Value = phone;
+                    newUser.Parameters.Add("@cname", SqlDbType.NVarChar, 255).Value = cname;
+                    newUser.Parameters.Add("@ctitle", SqlDbType.NVarChar, 60).Value = ctitle;
+                    newUser.Parameters.Add("@caddr", SqlDbType.NVarChar, 255).Value = caddr;
+                    newUser.Parameters.Add("@czip", SqlDbType.NVarChar, 6).Value = czip;
+                    newUser.Parameters.Add("@cstate", SqlDbType.NVarChar, 2).Value = cstate;
+                    newUser.Parameters.Add("@city", SqlDbType.NVarChar, 60).Value = city;
                     int keyReturn = Convert.ToInt32(newUser.ExecuteScalar());
                     return keyReturn;
                 }

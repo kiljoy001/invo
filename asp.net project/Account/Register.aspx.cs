@@ -20,10 +20,8 @@ namespace asp.net_project.Account
             middleTier createUser = new middleTier();
             string hashedPassword = createUser.generateHash(Password.Text);
             try
-            {
-                string concat_text;
-                if (!String.IsNullOrEmpty(cAddress_opt.Text)) {concat_text = $"{cAddress.Text} {cAddress_opt.Text}"; insert = createUser.insertUser(hashedPassword, fName.Text, lName.Text, Phone.Text, Email.Text, cName.Text, cTitle.Text, concat_text, cZip.Text, cStateList.SelectedValue); }
-                else { insert = createUser.insertUser(hashedPassword, fName.Text, lName.Text, Phone.Text, Email.Text, cName.Text, cTitle.Text, cAddress.Text, cZip.Text, cStateList.SelectedValue); }
+            { 
+                insert = createUser.insertUser(hashedPassword, fName.Text, lName.Text, Phone.Text, Email.Text, cName.Text, cTitle.Text, cAddress.Text, cZip.Text, cStateList.SelectedValue, City.Text); 
                 
             }
             catch

@@ -166,13 +166,13 @@ namespace asp.net_project.Account {
         protected global::System.Web.UI.WebControls.TextBox cAddress;
         
         /// <summary>
-        /// cAddress_opt control.
+        /// City control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cAddress_opt;
+        protected global::System.Web.UI.WebControls.TextBox City;
         
         /// <summary>
         /// cStateList control.

@@ -83,14 +83,19 @@
             <asp:Label runat="server" AssociatedControlID="cAddress" CssClass="col-md-2 control-label">Company Address</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="cAddress" Class="form-control" TextMode="SingleLine" />
-                <div class="form-group"></div>
-                <asp:TextBox runat="server" ID="cAddress_opt" Class="form-control" TextMode="SingleLine" />
+                
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="cAddress"
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter company name" />
                 <%--<asp:RegularExpressionValidator ID="cAddress_validator1" runat="server" ControlToValidate="cAddress" Display="Dynamic" ValidationExpression="^[a-zA-Z''-'\s]{1,100}$" ErrorMessage="Please enter your company address." CssClass="text-danger" />--%>
                 <%--<asp:RegularExpressionValidator ID="cAddress_validator2" runat="server" ControlToValidate="cAddress_opt" Display="Dynamic" ValidationExpression="^[a-zA-Z''-'\s]{1,100}$" ErrorMessage="Please enter your company address." CssClass="text-danger" />--%>
-            </div>
+            </div>      
         </div>
+        <div class="form-group">
+                    <asp:Label runat="server" AssociatedControlID="City" CssClass="col-md-2 control-label">City</asp:Label>
+                <div class="col-md-10">
+                    <asp:TextBox runat="server" ID="City" Class="form-control" TextMode="SingleLine" />
+                    </div>
+                </div>
         <div class="form-group">          
                 <asp:Label runat="server" AssociatedControlID="cStateList" CssClass="col-md-2 control-label">Company State</asp:Label>
             <div class="col-md-10">
@@ -99,7 +104,7 @@
                         color: black;
                     }
                 </style>
-                <asp:DropDownList ID="cStateList" runat="server" AutoPostBack="true">
+                <asp:DropDownList ID="cStateList" runat="server" AutoPostBack="false">
                     <asp:ListItem Selected="True">Select State</asp:ListItem>
                     <asp:ListItem Value="AL">Alabama</asp:ListItem>
                     <asp:ListItem Value="AK">Alaska</asp:ListItem>
