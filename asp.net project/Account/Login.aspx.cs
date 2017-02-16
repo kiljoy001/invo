@@ -32,7 +32,8 @@ namespace asp.net_project.Account
             {
                 if(RememberMe.Checked)
                 {
-
+                    HttpCookie welcome = new HttpCookie("welcome");
+                    welcome["user"] = Email.Text;
                 }
                 Response.Redirect("Member.aspx");
             }
