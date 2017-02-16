@@ -252,12 +252,17 @@
     <Content Include="Account\Web.config" />
     <Content Include="Images\archive-1850170_1920.jpg" />
     <Content Include="Images\bags-1633717_1920.jpg" />
+    <Content Include="Images\cloud_shape__ios_7_interface_symbol.svg" />
     <Content Include="Images\factory-947425.jpg" />
     <Content Include="Images\workshop-1493804_1920.jpg" />
+    <Content Include="Images\_puzzle_pieces_in_black_and_white_variant.svg" />
+    <Content Include="Images\_radar.svg" />
     <Content Include="LICENSE.txt" />
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <Content Include="apiapp.json" />
+    <None Include="Properties\PublishProfiles\csi291 - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\csi291 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\csi291 - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\csi291 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
