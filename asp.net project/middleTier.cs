@@ -109,7 +109,7 @@ namespace asp.net_project
             string name = null;
             using (SqlConnection dbConnect = new SqlConnection())
             {
-                SqlCommand getPwd = new SqlCommand("SELECT user_password from site_login where user_login like @login");
+                SqlCommand getPwd = new SqlCommand("SELECT user_fname from site_login where user_login like @login");
                 try
                 {
                     dbConnect.ConnectionString = "Server = tcp:webappdb-csi291.database.windows.net,1433;Initial Catalog = model_db; Persist Security Info=False;User ID =webappdb_csi291; Password=GKLq4AqS9NadbUJ9qCbHemkc; MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;";
