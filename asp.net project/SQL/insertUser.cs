@@ -4,8 +4,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-
-namespace asp.net_project
+using System.Windows;
+//untested abstraction
+namespace wpf
 {
     public class insertUser : AbstractedSQL
     {
@@ -33,13 +34,15 @@ namespace asp.net_project
                     newUser.Parameters.Add("@czip", SqlDbType.NVarChar, 6).Value = czip;
                     newUser.Parameters.Add("@cstate", SqlDbType.NVarChar, 2).Value = cstate;
                     newUser.Parameters.Add("@city", SqlDbType.NVarChar, 60).Value = city;
-                } catch (SqlException se)
-                {
 
                 }
-                catch(Exception ex)
+                catch (SqlException se)
                 {
-
+                    MessageBox.Show($"An SQL related error has occured.", $"Error: {se.ToString()}");
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show($"Error: {e.ToString()}\n{e.GetType()}", $"An {e.GetType()} error has occured.");
                 }
             }
         }

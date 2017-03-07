@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
-
-namespace asp.net_project
+using System.Windows;
+//abstracted class that collects hash from the database for logins
+namespace wpf
 {
     public class getHash : AbstractedSQL
     {
@@ -15,11 +16,11 @@ namespace asp.net_project
         {
             using (SqlConnection dbConnect = new SqlConnection())
             {
-
+                dbConnect.ConnectionString = connection;
                 SqlCommand getPwd = new SqlCommand(selectPwd);
                 try
                 {
-                    dbConnect.ConnectionString = connection;
+                    
                     dbConnect.Open();
                     getPwd.Connection = dbConnect;
                     getPwd.CommandType = CommandType.Text;
@@ -29,14 +30,18 @@ namespace asp.net_project
                     {
                         while (return_value.Read()) { hash = return_value.GetString(0); }
                     }
+                    else
+                    {
+                        throw new ArgumentNullException();
+                    }
                 }
                 catch (SqlException se)
                 {
-
+                    MessageBox.Show($"An SQL related error has occured.", $"Error: {se.ToString()}");
                 }
                 catch (Exception e)
                 {
-
+                    MessageBox.Show($"Error: {e.ToString()}\n{e.GetType()}", $"An {e.GetType()} error has occured.");
                 }
             }
         }
