@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Elmah;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,7 +12,7 @@ namespace wpf.SQL
 {
     class insertProduct : AbstractedSQL
     {
-        public insertProduct(string pName, int pAmount, double pPrice)
+        public insertProduct(string pName, int pAmount, double pPrice, string login)
         {
             using (SqlConnection dbConnection = new SqlConnection())
             {
@@ -30,17 +31,18 @@ namespace wpf.SQL
                     newProduct.Parameters.Add("@pPrice", SqlDbType.SmallMoney).Value = pPrice;
                     Guid pGuid = Guid.NewGuid();
                     newProduct.Parameters.Add("@pGUID", SqlDbType.UniqueIdentifier).Value = pGuid;
-                    newProduct.Parameters.Add("@login", SqlDbType.NVarChar, 60).Value = Properties.Settings.Default.user_login;
+                    newProduct.Parameters.Add("@login", SqlDbType.NVarChar, 60).Value = login;
                     newProduct.ExecuteScalar();
                     trans.Commit();
                 }
                 catch (SqlException se)
                 {
-                    MessageBox.Show($"Error: {se.ToString()}", $"An SQL related error has occured.");
+                    //elmah logging
+                    ErrorSignal.FromCurrentContext().Raise(se);
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show($"Error: {e.ToString()}\n{e.GetType()}", $"An {e.GetType()} error has occured.");
+                    ErrorSignal.FromCurrentContext().Raise(e);
                 }
             }
         }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
+using Elmah;
 //abstracted class that collects hash from the database for logins
 namespace wpf
 {
@@ -37,11 +38,12 @@ namespace wpf
                 }
                 catch (SqlException se)
                 {
-                    MessageBox.Show($"An SQL related error has occured.", $"Error: {se.ToString()}");
+                    //elmah logging
+                    ErrorSignal.FromCurrentContext().Raise(se);
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show($"Error: {e.ToString()}\n{e.GetType()}", $"An {e.GetType()} error has occured.");
+                    ErrorSignal.FromCurrentContext().Raise(e);
                 }
             }
         }

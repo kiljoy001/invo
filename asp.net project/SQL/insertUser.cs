@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Elmah;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -38,11 +39,12 @@ namespace wpf
                 }
                 catch (SqlException se)
                 {
-                    MessageBox.Show($"An SQL related error has occured.", $"Error: {se.ToString()}");
+                    //elmah logging
+                    ErrorSignal.FromCurrentContext().Raise(se);
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                    MessageBox.Show($"Error: {e.ToString()}\n{e.GetType()}", $"An {e.GetType()} error has occured.");
+                    ErrorSignal.FromCurrentContext().Raise(e);
                 }
             }
         }

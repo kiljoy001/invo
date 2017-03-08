@@ -9,6 +9,9 @@ using asp.net_project.Models;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using wpf.SQL;
+using wpf;
+using Elmah;
 
 namespace asp.net_project.Account
 {
@@ -16,32 +19,23 @@ namespace asp.net_project.Account
     {
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            int insert = 0;
-            middleTier createUser = new middleTier();
-            string hashedPassword = createUser.generateHash(Password.Text);
             try
-            { 
-                insert = createUser.insertUser(hashedPassword, fName.Text, lName.Text, Phone.Text, Email.Text, cName.Text, cTitle.Text, cAddress.Text, cZip.Text, cStateList.SelectedValue, City.Text); 
-                
-            }
-            catch
             {
-                if(insert == -3)
-                {
-                    //popupbox with sql error?
-                }
-                else if(insert == -5)
-                {
-                    //popupbox with general error?
-                }
-
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(Password.Text);
+                insertUser createUser = new insertUser(hashedPassword, fName.Text, lName.Text, Phone.Text, Email.Text, cName.Text, cTitle.Text, cAddress.Text, cZip.Text, cStateList.SelectedValue, City.Text);
+            }
+               catch (SqlException se)
+            {
+                //elmah logging
+                ErrorSignal.FromCurrentContext().Raise(se);
+            }
+            catch (Exception ex)
+            {
+                ErrorSignal.FromCurrentContext().Raise(ex);
             }
             Response.Redirect("Login.aspx");
         }
 
-        protected void cStateList_SelectedIndexChanged(object sender, EventArgs e)
-        {
         
         }
     }
-}

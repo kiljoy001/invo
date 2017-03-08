@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
+using Elmah;
 
 namespace wpf.SQL
 {
@@ -33,11 +34,12 @@ namespace wpf.SQL
                 }
                 catch (SqlException se)
                 {
-                    MessageBox.Show($"Error: {se.ToString()}", $"An SQL related error has occured.");
+                    //elmah logging
+                    ErrorSignal.FromCurrentContext().Raise(se);
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show($"Error: {e.ToString()}\n{e.GetType()}", $"An {e.GetType()} error has occured.");
+                    ErrorSignal.FromCurrentContext().Raise(e);
                 }
             }
         }
@@ -46,5 +48,6 @@ namespace wpf.SQL
             if(email_value == email) { return true; }
             else { return false; }         
         }
+        public string Value { get { return email_value; } }
     }
 }

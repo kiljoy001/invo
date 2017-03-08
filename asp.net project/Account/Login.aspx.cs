@@ -5,6 +5,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using asp.net_project.Models;
+using wpf;
+using wpf.SQL;
 
 namespace asp.net_project.Account
 {
@@ -24,19 +26,16 @@ namespace asp.net_project.Account
         }
 
         protected void LogIn(object sender, EventArgs e)
-        {
-            middleTier login = new middleTier();
-            string hash = login.getHash(Email.Text);
-            bool compare = login.compareHash(Password.Text, hash);
-            if (compare)
+        { 
+            getHash hash = new getHash(Email.Text);
+            checkEmail compare = new checkEmail(Email.Text);
+            if (compare.check_if_correct(Email.Text))
             {
-                if(RememberMe.Checked)
-                {
+
                     HttpCookie welcome = new HttpCookie("welcome");
                     welcome["user"] = Email.Text;
-                    welcome["name"] = login.getName(Email.Text);
                     Response.Cookies.Add(welcome);
-                }
+
                 Response.Redirect("Member.aspx");
             }
         }
