@@ -18,6 +18,7 @@ namespace asp.net_project.Account
                 modeldb.SelectParameters.Add("product_enable",System.Data.DbType.Boolean,"true");
                 modeldb.SelectParameters.Add("owner", cleanup[1]);
                 modeldb.SelectCommand = "SELECT [product_name], [product_units], [product_price], [product_guid] FROM [Product] WHERE ([product_enable] = @product_enable and [product_owner] = @owner)";
+                //modeldb.DeleteCommand = 
                
             }
             else //no cookie, no access

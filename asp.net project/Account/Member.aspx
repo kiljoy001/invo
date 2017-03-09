@@ -5,6 +5,7 @@
     <h1 class="page-header">Current Products</h1>
     <asp:gridview 
         id="product_grid"
+        autogeneratecolumns ="false"
         CssClass="table table-striped table-hover"
         headerStyle-CssClass="th"
         PagerStyle-CssClass="pagination"
@@ -15,7 +16,12 @@
         
     
         <Columns>
-            <asp:CommandField ShowSelectButton="True" />
+            <asp:CommandField ShowSelectButton="True" ShowDeleteButton="true" />
+            <asp:BoundField DataField="product_name" HeaderText="Product Name" />
+            <asp:BoundField DataField="product_units" HeaderText="Number of Product" />
+            <asp:BoundField DataField="product_price" HeaderText="Product Wholesale Price" />
+            <asp:BoundField DataField="product_guid" HeaderText="Tracking Number" />
+
         </Columns>
 <HeaderStyle CssClass="th"></HeaderStyle>
 
