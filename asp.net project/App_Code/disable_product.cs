@@ -12,7 +12,7 @@ namespace wpf.SQL
 {
     class disable_product : AbstractedSQL
     {
-        public disable_product(Guid id, string user_login)
+        public void disable(Guid id, string user_login)
         {
             using (SqlConnection dbConnection = new SqlConnection())
             {
@@ -44,3 +44,5 @@ namespace wpf.SQL
         }
     }
 }
+        
+
