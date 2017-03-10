@@ -36,5 +36,14 @@ namespace asp.net_project.Account
         {
             product_grid.DataBind();
         }
+        protected void updateNameBtn_Click(object sender, EventArgs e)
+        {
+            TextBox ibox = (TextBox)frmEdit.FindControl("input_name");
+            string newName = ibox.Text;
+            string login = Request.Cookies["welcome"].Value;
+            SqlDataSource1.UpdateParameters.Add("newName", newName);
+            SqlDataSource1.UpdateParameters.Add("owner", login);
+            SqlDataSource1.UpdateCommand = "update product set product_name = @newName where product_owner = @owner and product_clusterkey = @idkey";
+        }
     }
 }

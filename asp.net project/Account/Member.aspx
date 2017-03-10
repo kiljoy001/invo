@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Member.aspx.cs" MasterPageFile="~/Site.Master" Inherits="asp.net_project.Account.Member" %>
+﻿<%@ Page Language="C#" AutoEventWireup="True" CodeBehind="Member.aspx.cs" MasterPageFile="~/Site.Master" Inherits="asp.net_project.Account.Member" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %></h2>
@@ -46,7 +46,7 @@
             datakeynames="product_clusterkey"
             datasourceid="SqlDataSource1"
             runat="server"
-            onitemupdated="frmEdit_ItemUpdated">
+            onitemupdated="frmEdit_ItemUpdated" Width="1586px">
             <ItemTemplate>
                 <div class="panel panel-success">
                     <div id="topbox" class="panel-heading">
@@ -56,33 +56,39 @@
                             </a>
                         </h2>
                         <span>
-                                <input type="text" class="form-control" id="name" style="display: none; margin-left: 2px; margin-top:5px; width: 200px;"  />
-                                    <button id="updateBtn" class="btn btn-primary" style="display: none;">
-                                        Update
-                                    </button>
+                            <asp:TextBox class="form-control" id="input_name" style="display: none; margin-left: 2px; margin-top:5px; width: 200px;" runat="server" ClientIDMode="Static"  text='<%# Bind("product_name") %>'/>
+                            <asp:LinkButton 
+                                runat="server"
+                                id="updateNameBtn"
+                                class="btn btn-primary"
+                                ClientIDMode="Static"
+                                style="display: none;" 
+                                CommandName="Update">
+                                Update
+                            </asp:LinkButton>
                             </span>     
                     </div>
                     <div class="panel-body">
                             <span>
-                                <b>Units: </b>
+                                <h2><b>Units: </b></h2>
                                 <a href="#" id="amount">
-                                    <%# Eval("product_units") %>
+                                    <h2><%# Eval("product_units") %></h2>
                                 </a>
                                 <span class="input-group-btn">
                                     <input type="text" class="form-control" id="units" style="display: none; width: 200px;" />
-                                    <button id="updateAmt" class="btn btn-primary" style="display: none; margin-top:-12px;">
+                                    <button id="updateAmt" class="btn btn-primary" style="display: none; margin-top:-12px;"  >
                                         Update
                                     </button>
                                 </span>
                             </span>
                         <br />
                             <span>
-                                <b>Wholesale Price: </b>
+                                <h2><b>Wholesale Price: </b></h2>
                                 <a href="#" id="wprice">
-                                    <%#Eval("product_price","{0:c}")%>
+                                    <h2><%#Eval("product_price","{0:c}")%></h2>
                                 </a>
                                 <input type="text" class="form-control" id="price" style="display: none; margin-left: 5px; width: 200px;" />
-                                    <button id="updatePrc" class="btn btn-primary" style="display: none; margin-top:-5px; ">
+                                    <button id="updatePrc" class="btn btn-primary" style="display: none; margin-top:-5px;" >
                                         Update
                                     </button>
                             </span>
@@ -91,12 +97,12 @@
                 </div>
             </ItemTemplate>
         </asp:FormView>
-           </div>      
+           </div>
     <script>
         $(function () {
             $("#updateName").click(function () {
-                $("#name").slideToggle("fast").css('display', 'inline');
-                $("#updateBtn").slideToggle("fast").css('display', 'inline');
+                $("#input_name").slideToggle("fast").css('display', 'inline');
+                $("#updateNameBtn").slideToggle("fast").css('display', 'inline');
             });
         });
         $(function () {
@@ -111,5 +117,6 @@
                 $("#updatePrc").slideToggle("fast").css("display", "inline");
             });
         });
-    </script>
+
+    </script>      
 </asp:Content>
